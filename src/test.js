@@ -1,4 +1,4 @@
-module.exports = function toReadable(number) {
+function toReadable(number) {
     const zeroToTwenty = [
         "",
         "one",
@@ -51,10 +51,12 @@ module.exports = function toReadable(number) {
         if (secondNum < 20) {
             secondNumStr = zeroToTwenty[secondNum];
             res += " " + secondNumStr;
-            return res.trim();
+            return res;
         }
         const thirdNumStr = zeroToTwenty[number % 10];
         res += " " + secondNumStr + " " + thirdNumStr;
-        return res.trim();
+        return res;
     }
-};
+}
+
+toReadable(998);
